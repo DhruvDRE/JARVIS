@@ -13,6 +13,7 @@ import sys
 from PyQt5.QtWidgets import *  # they import application widgets
 from PyQt5.QtWebEngineWidgets import * # they import all the widgets required 
 from PyQt5.QtCore import *
+from PyQt5 import QtGui
 
 
 #Future aspects for home automation with jarvis
@@ -87,6 +88,7 @@ def online_search(command):
 	class MainWindow(QMainWindow):
 		def __init__(self):
 			super(MainWindow,self).__init__()
+			self.setWindowIcon(QtGui.QIcon('logo.png'))# for setting icon of browser
 			self.browser= QWebEngineView()
 			self.browser.setUrl(QUrl("http://google.com/search?source=hp&q="+c+"/"))
 			self.setCentralWidget(self.browser)
